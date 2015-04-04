@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource_file type="PackedScene" subresource_count="3" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
+	<ext_resource path="res://game/gui/menu/load_game_dialog.gd" type="Script"></ext_resource>
+	<ext_resource path="res://game/gui/menu/main_menu.gd" type="Script"></ext_resource>
+	<main_resource>
+		<dictionary name="_bundled" shared="false">
+			<string> "names" </string>
+			<string_array  len="48">
+				<string> "MainMenu" </string>
+				<string> "VBoxContainer" </string>
+				<string> "_import_path" </string>
+				<string> "visibility/visible" </string>
+				<string> "visibility/opacity" </string>
+				<string> "visibility/self_opacity" </string>
+				<string> "visibility/behind_parent" </string>
+				<string> "anchor/left" </string>
+				<string> "anchor/top" </string>
+				<string> "anchor/right" </string>
+				<string> "anchor/bottom" </string>
+				<string> "margin/left" </string>
+				<string> "margin/top" </string>
+				<string> "margin/right" </string>
+				<string> "margin/bottom" </string>
+				<string> "focus_neighbour/left" </string>
+				<string> "focus_neighbour/top" </string>
+				<string> "focus_neighbour/right" </string>
+				<string> "focus_neighbour/bottom" </string>
+				<string> "focus/ignore_mouse" </string>
+				<string> "focus/stop_mouse" </string>
+				<string> "size_flags/horizontal" </string>
+				<string> "size_flags/vertical" </string>
+				<string> "size_flags/stretch_ratio" </string>
+				<string> "script/script" </string>
+				<string> "__meta__" </string>
+				<string> "Start" </string>
+				<string> "MenuButton" </string>
+				<string> "disabled" </string>
+				<string> "toggle_mode" </string>
+				<string> "click_on_press" </string>
+				<string> "text" </string>
+				<string> "icon" </string>
+				<string> "flat" </string>
+				<string> "clip_text" </string>
+				<string> "align" </string>
+				<string> "items" </string>
+				<string> "Load" </string>
+				<string> "Save" </string>
+				<string> "Quit" </string>
+				<string> "LoadDialog" </string>
+				<string> "FileDialog" </string>
+				<string> "popup/exclusive" </string>
+				<string> "window/title" </string>
+				<string> "_on_Start_pressed" </string>
+				<string> "pressed" </string>
+				<string> "_on_Load_pressed" </string>
+				<string> "_on_Quit_pressed" </string>
+			</string_array>
+			<string> "version" </string>
+			<int> 1 </int>
+			<string> "conn_count" </string>
+			<int> 3 </int>
+			<string> "node_count" </string>
+			<int> 6 </int>
+			<string> "variants" </string>
+			<array  len="31" shared="false">
+				<node_path> "" </node_path>
+				<bool> True </bool>
+				<real> 1 </real>
+				<bool> False </bool>
+				<int> 3 </int>
+				<real> 100 </real>
+				<real> -100 </real>
+				<int> 2 </int>
+				<resource  resource_type="Script" path="res://game/gui/menu/main_menu.gd">  </resource>
+				<dictionary  shared="false">
+					<string> "__editor_plugin_states__" </string>
+					<dictionary  shared="false">
+						<string> "Script" </string>
+						<dictionary  shared="false">
+							<string> "current" </string>
+							<int> 0 </int>
+							<string> "sources" </string>
+							<array  len="2" shared="false">
+								<string> "res://game/gui/menu/main_menu.gd" </string>
+								<string> "res://game/gui/menu/load_game_dialog.gd" </string>
+							</array>
+						</dictionary>
+						<string> "2D" </string>
+						<dictionary  shared="false">
+							<string> "pixel_snap" </string>
+							<bool> False </bool>
+							<string> "zoom" </string>
+							<real> 0.814506 </real>
+							<string> "use_snap" </string>
+							<bool> False </bool>
+							<string> "ofs" </string>
+							<vector2> -147.894, -75.5364 </vector2>
+							<string> "snap" </string>
+							<int> 10 </int>
+						</dictionary>
+						<string> "3D" </string>
+						<dictionary  shared="false">
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
+							<string> "viewports" </string>
+							<array  len="4" shared="false">
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> True </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+								<dictionary  shared="false">
+									<string> "distance" </string>
+									<real> 4 </real>
+									<string> "x_rot" </string>
+									<real> 0 </real>
+									<string> "y_rot" </string>
+									<real> 0 </real>
+									<string> "listener" </string>
+									<bool> False </bool>
+									<string> "use_environment" </string>
+									<bool> False </bool>
+									<string> "use_orthogonal" </string>
+									<bool> False </bool>
+									<string> "pos" </string>
+									<vector3> 0, 0, 0 </vector3>
+								</dictionary>
+							</array>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
+							<string> "ambient_light_color" </string>
+							<color> 0.15, 0.15, 0.15, 1 </color>
+							<string> "show_grid" </string>
+							<bool> True </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
+							<string> "znear" </string>
+							<real> 0.1 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
+						</dictionary>
+					</dictionary>
+					<string> "__editor_run_settings__" </string>
+					<dictionary  shared="false">
+						<string> "custom_args" </string>
+						<string> "-l $scene" </string>
+						<string> "run_mode" </string>
+						<int> 0 </int>
+					</dictionary>
+					<string> "__editor_plugin_screen__" </string>
+					<string> "2D" </string>
+				</dictionary>
+				<real> 200 </real>
+				<real> 19 </real>
+				<real> 2 </real>
+				<string> "START" </string>
+				<resource name=""></resource>				<int> 1 </int>
+				<array  len="0" shared="false">
+				</array>
+				<real> 23 </real>
+				<real> 42 </real>
+				<string> "Load" </string>
+				<real> 46 </real>
+				<real> 65 </real>
+				<string> "Save" </string>
+				<real> 69 </real>
+				<real> 88 </real>
+				<string> "Quit" </string>
+				<real> 250 </real>
+				<real> -250 </real>
+				<real> -200 </real>
+				<string> "set the title in the godot script" </string>
+				<resource  resource_type="Script" path="res://game/gui/menu/load_game_dialog.gd">  </resource>
+			</array>
+			<string> "nodes" </string>
+			<int_array  len="346"> 				-1, -1, 1, 0, -1, 24, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 4, 10, 4, 11, 5, 12, 5, 13, 6, 14, 6, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 3, 21, 7, 22, 7, 23, 2, 24, 8, 25, 9, 0, 0, 0, 27, 26, -1, 25, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 13, 10, 14, 11, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 1, 21, 7, 22, 7, 23, 12, 28, 3, 29, 3, 30, 1, 31, 13, 32, 14, 33, 3, 34, 3, 35, 15, 36, 16, 0, 0, 0, 27, 37, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 12, 17, 13, 10, 14, 18, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 1, 21, 7, 22, 7, 23, 2, 28, 3, 29, 3, 30, 1, 31, 19, 32, 14, 33, 3, 34, 3, 35, 15, 36, 16, 0, 0, 0, 27, 38, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 12, 20, 13, 10, 14, 21, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 1, 21, 7, 22, 7, 23, 2, 28, 3, 29, 3, 30, 1, 31, 22, 32, 14, 33, 3, 34, 3, 35, 15, 36, 16, 0, 0, 0, 27, 39, -1, 26, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 12, 23, 13, 10, 14, 24, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 1, 21, 7, 22, 7, 23, 2, 28, 3, 29, 3, 30, 1, 31, 25, 32, 14, 33, 3, 34, 3, 35, 15, 36, 16, 0, 0, 0, 41, 40, -1, 25, 2, 0, 3, 3, 4, 2, 5, 2, 6, 3, 7, 4, 8, 4, 9, 4, 10, 4, 11, 26, 12, 10, 13, 27, 14, 28, 15, 0, 16, 0, 17, 0, 18, 0, 19, 3, 20, 1, 21, 7, 22, 7, 23, 2, 42, 1, 43, 29, 24, 30, 0 </int_array>
+			<string> "conns" </string>
+			<int_array  len="18"> 				1, 0, 45, 44, 2, 0, 2, 0, 45, 46, 2, 0, 4, 0, 45, 47, 2, 0 </int_array>
+		</dictionary>
+
+	</main_resource>
+</resource_file>

@@ -3,6 +3,14 @@ extends VBoxContainer
 
 func _ready():
 	# Initalization here
+	var classDwarf = load ("res://scripts/dwarf.gd")
+	var obj = classDwarf.new()
+	obj.set_name ("Hans")
+	var serialized = obj.serialize()
+	print(serialized)
+	
+	var deser = dict2inst(serialized)
+	print("name: ", deser.get_name())
 	pass
 
 func _on_Start_pressed():
