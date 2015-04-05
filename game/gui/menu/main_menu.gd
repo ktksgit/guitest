@@ -1,16 +1,9 @@
 extends VBoxContainer
 
+const sceneStart = "res://game/world/demo/start.xscn"
 
 func _ready():
 	# Initalization here
-	var classDwarf = load ("res://scripts/dwarf.gd")
-	var obj = classDwarf.new()
-	obj.set_name ("Hans")
-	var serialized = obj.serialize()
-	print(serialized)
-	
-	var deser = dict2inst(serialized)
-	print("name: ", deser.get_name())
 	pass
 
 func _on_Start_pressed():
@@ -24,7 +17,7 @@ func _on_Start_pressed():
 		#world.set_pause_mode(PAUSE_MODE_PROCESS)
 		
 		if(world.get_child_count() == 0):
-			var scene = load("res://world/map_test_pathfinding.scn")
+			var scene = load(sceneStart)
 			var node = scene.instance()
 			
 			
