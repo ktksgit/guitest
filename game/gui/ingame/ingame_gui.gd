@@ -13,9 +13,8 @@ func _on_MainMenu_pressed():
 	if(menu != null && world != null):
 		menu.show()
 		hide()
-		world.set_pause_mode(PAUSE_MODE_STOP)
-		#world.get_node("Spatial").set_process_input(false)
-		#print(world.get_node("Spatial").get_pause_mode())
+		#world.set_pause_mode(PAUSE_MODE_STOP)
+		get_tree().set_pause(true)
 	else:
 		print ("Entering main menu failed")
 	
