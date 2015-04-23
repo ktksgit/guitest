@@ -1,5 +1,5 @@
 
-extends EmptyControl
+extends Control
 
 func _ready():
 	# Initalization here

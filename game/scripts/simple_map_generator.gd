@@ -11,11 +11,13 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
-	if(time < 0.1):
+	if(time < 0.01):
 		time += delta
 		return
-		
-	time -= 0.1
+	
+	
+	
+	time -= 0.01
 
 	if (grid_map == null):
 		_initialize()
@@ -42,7 +44,11 @@ func _process(delta):
 			distance += 1
 			state = -distance
 			
-		cubes_built = distance * distance * 2
-
+		cubes_built = 4 * distance * distance * 2
+		#print ("cubes: ", cubes_built)
+		
+		#grid_map.set_bake(true)
+		#grid_map.bake_geometry()
+		
 func _initialize():
 	grid_map = get_parent().get_node("GridMap")

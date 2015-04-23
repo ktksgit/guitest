@@ -19,5 +19,6 @@ func _on_LoadDialog_confirmed():
 		
 		var n = world.instance()
 		base.add_child(n)
+		get_tree().set_pause(true)
 	else:
-		print ("loading failed")
+		print ("loading failed. Error: ", world)

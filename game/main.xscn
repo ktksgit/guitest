@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="5" version="1.0" version_name="Godot Engine v1.0.stable.7eb5d049c2">
-	<ext_resource path="res://game/scripts/camera.gd" type="Script"></ext_resource>
+<resource_file type="PackedScene" subresource_count="5" version="1.1" version_name="Godot Engine v1.1.beta1.42d41a3fbc">
 	<ext_resource path="res://game/gui/menu/main_menu.xscn" type="PackedScene"></ext_resource>
-	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script"></ext_resource>
 	<ext_resource path="res://game/gui/ingame/ingame_gui.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://game/scripts/camera.gd" type="Script"></ext_resource>
+	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script"></ext_resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="53">
+			<string_array  len="55">
 				<string> "Node" </string>
 				<string> "_import_path" </string>
 				<string> "__meta__" </string>
@@ -21,7 +21,7 @@
 				<string> "MainMenu" </string>
 				<string> "VBoxContainer" </string>
 				<string> "IngameGUI" </string>
-				<string> "EmptyControl" </string>
+				<string> "Control" </string>
 				<string> "visibility/visible" </string>
 				<string> "World" </string>
 				<string> "Camera" </string>
@@ -35,6 +35,8 @@
 				<string> "current" </string>
 				<string> "visible_layers" </string>
 				<string> "environment" </string>
+				<string> "h_offset" </string>
+				<string> "v_offset" </string>
 				<string> "script/script" </string>
 				<string> "pos" </string>
 				<string> "DirectionalLight" </string>
@@ -77,29 +79,40 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 3 </int>
+							<int> 1 </int>
 							<string> "sources" </string>
-							<array  len="6" shared="false">
-								<string> "res://game/gui/menu/main_menu.gd" </string>
-								<string> "res://game/gui/ingame/ingame_gui.gd" </string>
+							<array  len="5" shared="false">
 								<string> "res://game/scripts/simple_map_generator.gd" </string>
 								<string> "res://game/gui/menu/save_game_dialog.gd" </string>
 								<string> "res://game/scripts/camera.gd" </string>
 								<string> "res://game/gui/menu/load_game_dialog.gd" </string>
+								<string> "res://game/scripts/save/game_save.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
 						<dictionary  shared="false">
-							<string> "pixel_snap" </string>
+							<string> "snap_pixel" </string>
 							<bool> False </bool>
+							<string> "snap_rotation_step" </string>
+							<real> 0.261799 </real>
 							<string> "zoom" </string>
 							<real> 0.9025 </real>
-							<string> "use_snap" </string>
+							<string> "snap_step" </string>
+							<vector2> 10, 10 </vector2>
+							<string> "snap_relative" </string>
 							<bool> False </bool>
+							<string> "snap_grid" </string>
+							<bool> False </bool>
+							<string> "snap_rotation_offset" </string>
+							<real> 0 </real>
+							<string> "snap_show_grid" </string>
+							<bool> False </bool>
+							<string> "snap_offset" </string>
+							<vector2> 0, 0 </vector2>
 							<string> "ofs" </string>
 							<vector2> -277.402, -33.6593 </vector2>
-							<string> "snap" </string>
-							<int> 10 </int>
+							<string> "snap_rotation" </string>
+							<bool> False </bool>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -211,6 +224,8 @@
 				<vector2> 1, 1 </vector2>
 				<resource  resource_type="PackedScene" path="res://game/gui/menu/main_menu.xscn">  </resource>
 				<dictionary  shared="false">
+					<string> "_editor_collapsed" </string>
+					<bool> True </bool>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "Script" </string>
@@ -238,12 +253,10 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "zfar" </string>
-							<real> 500 </real>
 							<string> "fov" </string>
 							<real> 45 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -311,22 +324,24 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "default_light" </string>
-							<bool> True </bool>
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "viewport_mode" </string>
 							<int> 1 </int>
+							<string> "default_light" </string>
+							<bool> True </bool>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "znear" </string>
-							<real> 0.1 </real>
 							<string> "show_origin" </string>
 							<bool> True </bool>
-							<string> "deflight_rot_x" </string>
-							<real> 0.942478 </real>
+							<string> "znear" </string>
+							<real> 0.1 </real>
 							<string> "default_srgb" </string>
 							<bool> False </bool>
+							<string> "deflight_rot_x" </string>
+							<real> 0.942478 </real>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_show_subtree" </string>
@@ -372,12 +387,10 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "deflight_rot_y" </string>
-							<real> 0.628319 </real>
-							<string> "zfar" </string>
-							<real> 500 </real>
 							<string> "fov" </string>
 							<real> 45 </real>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -445,22 +458,24 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
-							<string> "viewport_mode" </string>
-							<int> 1 </int>
+							<string> "deflight_rot_y" </string>
+							<real> 0.628319 </real>
 							<string> "default_light" </string>
 							<bool> True </bool>
+							<string> "viewport_mode" </string>
+							<int> 1 </int>
 							<string> "ambient_light_color" </string>
 							<color> 0.15, 0.15, 0.15, 1 </color>
 							<string> "show_grid" </string>
 							<bool> True </bool>
-							<string> "show_origin" </string>
-							<bool> True </bool>
 							<string> "znear" </string>
 							<real> 0.1 </real>
-							<string> "default_srgb" </string>
-							<bool> False </bool>
+							<string> "show_origin" </string>
+							<bool> True </bool>
 							<string> "deflight_rot_x" </string>
 							<real> 0.942478 </real>
+							<string> "default_srgb" </string>
+							<bool> False </bool>
 						</dictionary>
 					</dictionary>
 					<string> "__editor_show_subtree" </string>
@@ -494,7 +509,7 @@
 				<resource  resource_type="Script" path="res://game/scripts/simple_map_generator.gd">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="170"> 				-1, -1, 0, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 4, 3, -1, 6, 1, 0, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 0, 1, 0, 11, 10, 7, 2, 1, 0, 2, 8, 0, 1, 0, 13, 12, 9, 3, 1, 0, 14, 10, 2, 11, 0, 0, 0, 0, 15, -1, 2, 1, 0, 5, 3, 0, 4, 0, 16, 16, -1, 14, 1, 0, 17, 12, 18, 13, 14, 14, 19, 15, 20, 16, 21, 17, 22, 18, 23, 3, 24, 14, 25, 19, 26, 20, 27, 21, 28, 22, 0, 4, 0, 29, 29, -1, 23, 1, 0, 17, 12, 18, 23, 14, 14, 30, 3, 31, 14, 32, 10, 33, 15, 34, 24, 35, 25, 36, 25, 37, 10, 38, 5, 39, 26, 40, 5, 41, 16, 42, 24, 43, 20, 44, 15, 45, 15, 46, 5, 47, 27, 48, 28, 0, 4, 0, 0, 49, -1, 5, 1, 0, 27, 29, 50, 15, 51, 15, 52, 15, 0 </int_array>
+			<int_array  len="174"> 				-1, -1, 0, 0, -1, 2, 1, 0, 2, 1, 0, 0, 0, 4, 3, -1, 6, 1, 0, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 0, 1, 0, 11, 10, 7, 2, 1, 0, 2, 8, 0, 1, 0, 13, 12, 9, 3, 1, 0, 14, 10, 2, 11, 0, 0, 0, 0, 15, -1, 2, 1, 0, 5, 3, 0, 4, 0, 16, 16, -1, 16, 1, 0, 17, 12, 18, 13, 14, 14, 19, 15, 20, 16, 21, 17, 22, 18, 23, 3, 24, 14, 25, 19, 26, 20, 27, 5, 28, 5, 29, 21, 30, 22, 0, 4, 0, 31, 31, -1, 23, 1, 0, 17, 12, 18, 23, 14, 14, 32, 3, 33, 14, 34, 10, 35, 15, 36, 24, 37, 25, 38, 25, 39, 10, 40, 5, 41, 26, 42, 5, 43, 16, 44, 24, 45, 20, 46, 15, 47, 15, 48, 5, 49, 27, 50, 28, 0, 4, 0, 0, 51, -1, 5, 1, 0, 29, 29, 52, 15, 53, 15, 54, 15, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

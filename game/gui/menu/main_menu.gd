@@ -14,7 +14,7 @@ func _on_Start_pressed():
 		print ("Starting new game")
 		ingame.show()
 		hide()
-		#world.set_pause_mode(PAUSE_MODE_PROCESS)
+		get_tree().set_pause(false)
 		
 		if(!world.has_node("GridMap")):
 			var scene = load(SCENE_START)
