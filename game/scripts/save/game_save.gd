@@ -1,16 +1,17 @@
 
+var filename
+var strategy
 
-func saveTree(var node, var gridMap, var filename):
-	var pack = PackedScene.new()
-	pack.pack(gridMap)
-	
-	var res = ResourceSaver.save("res://savegames/map_tmp.scn", pack, ResourceSaver.FLAG_COMPRESS)
+func _init(var s_filename, var strategy_class):
+	filename = s_filename
+	strategy = strategy_class
+
+func saveTree(var node):
 	_setOwnerRecursive(node, node)
 	
-	var file = File.new()
-	file.open(filename, File.WRITE)
-	_saveNode(node, file)
-	file.close()
+	var savingStrategy = strategy.new(filename)
+	savingStrategy.saveNodeTree(node)
+	savingStrategy.finish()
 	
 func _setOwnerRecursive(var node, var owner):
 	if (node.get_owner() != owner):
@@ -18,23 +19,61 @@ func _setOwnerRecursive(var node, var owner):
 	
 	for n in node.get_children():
 		_setOwnerRecursive(n, owner)
-		
-func _saveNode (var node, var file):
-	file.store_var(node.get_name())
-	file.store_var(node.get_type())
-	file.store_32(node.get_child_count())
+
+
+# save strategy 1
+class SaveAsFile:
+	var file
 	
-	var props = node.get_property_list()
-	for p in props:
-		print ("name: ", p["name"], " type: ", p["type"]);
-		if (!p["usage"] & PROPERTY_USAGE_STORAGE):
-			continue
-		
-		var value = node.get(p["name"])
-		print ("value: ", value)
-		
-		file.store_var(p["name"])
-		file.store_var(value)
+	func _init (var filename):
+		file = File.new()
+		file.open(filename, File.WRITE)
 	
-	for child in node.get_children():
-		_saveNode(child, file)
+	func finish():
+		file.close()
+	
+	func saveNodeTree (var node):
+		file.store_var(node.get_name())
+		file.store_var(node.get_type())
+		
+		var props = node.get_property_list()
+		var prop_size = props.size()
+		var prop_size_store_location = file.get_pos()
+		file.store_32(prop_size)
+		
+		for p in props:
+			#print ("name: ", p["name"], " type: ", p["type"]);
+			if (!p["usage"] & PROPERTY_USAGE_STORAGE):
+				prop_size -= 1
+				continue
+			
+			var value = node.get(p["name"])
+			if (p["type"] == TYPE_OBJECT && value != null && value extends Resource):
+				value = value.get_path()
+				file.store_8(255)
+			else:
+				file.store_8(p["type"])
+			
+			#TODO: 	- check if type == OBJECT and object extends class Node. Save the NodePath of the object
+			# 		- all other object types are not saved
+			
+			file.store_var(p["name"])
+			file.store_var(value)
+		
+		#save correct property count
+		var current_position = file.get_pos()
+		file.seek(prop_size_store_location)
+		file.store_32(prop_size)
+		file.seek(current_position)
+		
+		#save child nodes
+		file.store_32(node.get_child_count())
+		for child in node.get_children():
+			saveNodeTree(child)
+
+# strategy class 2 
+# save node and its children as a scene
+# all properties of the nodes are saved
+class saveAsScene:
+	func _init():
+		pass

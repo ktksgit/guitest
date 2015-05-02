@@ -1,5 +1,6 @@
 extends FileDialog
 
+var class_game_load = load("res://game/scripts/save/game_load.gd")
 
 func _ready():
 	# Initalization here
@@ -10,6 +11,20 @@ func _ready():
 
 func _on_LoadDialog_confirmed():
 	var base =  get_node("/root/Node")
+	
+	#delete old World node
+	if(base.has_node("World")):
+		base.remove_and_delete_child(base.get_node("World"))
+	
+	var game_loader = class_game_load.new("res://savegames/write_props.txt", class_game_load.LoadAsFile)
+	
+	game_loader.loadTree(base)
+	
+	#pause the game
+	get_tree().set_pause(true)
+	return
+	
+	#dead code
 	
 	var world = load(get_current_path())
 	if (world != null):

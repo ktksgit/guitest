@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="1.1" version_name="Godot Engine v1.1.beta1.42d41a3fbc">
-	<ext_resource path="res://game/gui/menu/main_menu.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://game/gui/ingame/ingame_gui.xscn" type="PackedScene"></ext_resource>
+	<ext_resource path="res://game/gui/menu/main_menu.xscn" type="PackedScene"></ext_resource>
 	<ext_resource path="res://game/scripts/camera.gd" type="Script"></ext_resource>
 	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script"></ext_resource>
 	<main_resource>
@@ -79,14 +79,14 @@
 						<string> "Script" </string>
 						<dictionary  shared="false">
 							<string> "current" </string>
-							<int> 1 </int>
+							<int> 3 </int>
 							<string> "sources" </string>
 							<array  len="5" shared="false">
-								<string> "res://game/scripts/simple_map_generator.gd" </string>
 								<string> "res://game/gui/menu/save_game_dialog.gd" </string>
-								<string> "res://game/scripts/camera.gd" </string>
 								<string> "res://game/gui/menu/load_game_dialog.gd" </string>
 								<string> "res://game/scripts/save/game_save.gd" </string>
+								<string> "res://game/scripts/save/game_load.gd" </string>
+								<string> "res://game/scripts/save/object_creator.gd" </string>
 							</array>
 						</dictionary>
 						<string> "2D" </string>
@@ -253,10 +253,6 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "fov" </string>
-							<real> 45 </real>
-							<string> "zfar" </string>
-							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -324,8 +320,12 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "deflight_rot_y" </string>
 							<real> 0.628319 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "viewport_mode" </string>
 							<int> 1 </int>
 							<string> "default_light" </string>
@@ -387,10 +387,6 @@
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
-							<string> "fov" </string>
-							<real> 45 </real>
-							<string> "zfar" </string>
-							<real> 500 </real>
 							<string> "viewports" </string>
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
@@ -458,8 +454,12 @@
 									<vector3> 0, 0, 0 </vector3>
 								</dictionary>
 							</array>
+							<string> "zfar" </string>
+							<real> 500 </real>
 							<string> "deflight_rot_y" </string>
 							<real> 0.628319 </real>
+							<string> "fov" </string>
+							<real> 45 </real>
 							<string> "default_light" </string>
 							<bool> True </bool>
 							<string> "viewport_mode" </string>
