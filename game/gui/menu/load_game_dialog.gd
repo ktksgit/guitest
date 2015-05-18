@@ -14,7 +14,8 @@ func _on_LoadDialog_confirmed():
 	
 	#delete old World node
 	if(base.has_node("World")):
-		base.remove_and_delete_child(base.get_node("World"))
+		base.remove_child(base.get_node("World"))
+		# TODO: do we have to delete World in rc3 or not???
 	
 	var game_loader = class_game_load.new("res://savegames/write_props.txt", class_game_load.LoadAsFile)
 	
