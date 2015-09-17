@@ -17,7 +17,14 @@ func _on_SaveDialog_confirmed():
 	var gameSaver = class_game_save.new("res://savegames/write_props.txt", class_game_save.SaveAsFile)
 	
 	var world =  get_node("/root/Node/World")
+	gameSaver.saveTree(world)
 	
+	var gameSaver = class_game_save.new(get_current_path(), class_game_save.SaveAsScene)
+	gameSaver.saveTree(world)
+	
+	return;
+	
+	#dead code
 	var camera = world.get_node("Camera")
 	if(camera != null):
 		camera.set_owner(world)
@@ -33,8 +40,6 @@ func _on_SaveDialog_confirmed():
 	var mapGen = world.get_node("SimpleMapGenerator")
 	if (mapGen != null):
 		mapGen.set_owner(world)
-	
-	gameSaver.saveTree(world)
 	
 	var failed = false
 	if (world != null):

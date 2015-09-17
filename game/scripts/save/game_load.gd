@@ -41,11 +41,16 @@ class LoadAsFile:
 			
 			if (type == 255):
 				var resource = load (value)
+				node.set(name, resource)
+			else:
 				node.set(name, value)
+				
+			if (type != 20):
 				print (type, " ", name, " " , value);
-			else :
-				print (type, " ", name, " " , value);
-				node.set(name, value)
+			else:
+				print (type, " ", name);
+				
+			node.set_process(true)
 		
 		var children_count = file.get_32()
 		for i in range (children_count):

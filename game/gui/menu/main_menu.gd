@@ -11,12 +11,13 @@ func _on_Start_pressed():
 	var world = get_node("../../World")
 	
 	if(ingame != null && world != null):
-		print ("Starting new game")
+		print ("Starting")
 		ingame.show()
 		hide()
 		get_tree().set_pause(false)
 		
 		if(!world.has_node("GridMap")):
+			print ("Starting new Map")
 			var scene = load(SCENE_START)
 			var node = scene.instance()
 			

@@ -11,13 +11,11 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
-	if(time < 0.01):
+	if(time < 0.5):
 		time += delta
 		return
 	
-	
-	
-	time -= 0.01
+	time -= 0.5
 
 	if (grid_map == null):
 		_initialize()

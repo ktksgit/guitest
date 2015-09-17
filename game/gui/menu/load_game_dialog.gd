@@ -21,8 +21,12 @@ func _on_LoadDialog_confirmed():
 	
 	game_loader.loadTree(base)
 	
+	base.get_node("World/GridMap").show()
+	
+	self.hide()
+	
 	#pause the game
-	get_tree().set_pause(true)
+	#get_tree().set_pause(true)
 	return
 	
 	#dead code
