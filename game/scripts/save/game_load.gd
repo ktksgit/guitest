@@ -9,7 +9,7 @@ func loadTree(var parentNode):
 	var loadingStrategy = strategy.new(filename)
 	loadingStrategy.loadNodeTree(parentNode)
 	loadingStrategy.finish()
-
+	
 
 class LoadAsFile:
 	var file
@@ -27,6 +27,7 @@ class LoadAsFile:
 		var type = file.get_var();
 		var node = object_creator.create(type)
 		node.set_name(name)
+		node.set_process(file.get_var())
 		parent.add_child(node)
 		
 		print ("created ", name, " ", type)
@@ -45,12 +46,10 @@ class LoadAsFile:
 			else:
 				node.set(name, value)
 				
-			if (type != 20):
-				print (type, " ", name, " " , value);
-			else:
-				print (type, " ", name);
-				
-			node.set_process(true)
+#			if (type != 20):
+#				print (type, " ", name, " " , value);
+#			else:
+#				print (type, " ", name);
 		
 		var children_count = file.get_32()
 		for i in range (children_count):
@@ -60,4 +59,15 @@ class LoadAsFile:
 		file.close()
 
 class LoadAsScene:
+	var filename
+	
+	func _init (var filename):
+		self.filename = filename
+	
+	func loadNodeTree(world):
+		var world = load(filename)
+		if (world == null):
+			print ("loading failed. Error: ", world)
+			
+		return world
 	

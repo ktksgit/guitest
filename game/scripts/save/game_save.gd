@@ -36,6 +36,7 @@ class SaveAsFile:
 		#TODO: save if the node should be processed
 		file.store_var(node.get_name())
 		file.store_var(node.get_type())
+		file.store_var(node.is_processing())
 		
 		var props = node.get_property_list()
 		var prop_size = props.size()
