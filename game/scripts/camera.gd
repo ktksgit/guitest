@@ -28,8 +28,10 @@ func _process(delta):
 func _input(event):
 	if (event.type == InputEvent.KEY && event.is_pressed()):
 		if (event.scancode == KEY_KP_ADD):
+			get_tree().set_input_as_handled()
 			pos = get_translation() + Vector3(0,0,-1);
 			set_translation(pos);
 		if (event.scancode == KEY_KP_SUBSTRACT):
+			get_tree().set_input_as_handled()
 			pos = get_translation() + Vector3(0,0,1);
 			set_translation(pos);

@@ -7,18 +7,10 @@ func _init(var s_filename, var strategy_class):
 	strategy = strategy_class
 
 func saveTree(var node):
-	_setOwnerRecursive(node, node)
 	
 	var savingStrategy = strategy.new(filename)
 	savingStrategy.saveNodeTree(node)
 	savingStrategy.finish()
-	
-func _setOwnerRecursive(var node, var owner):
-	if (node.get_owner() != owner):
-		node.set_owner(owner)
-	
-	for n in node.get_children():
-		_setOwnerRecursive(n, owner)
 
 
 # save strategy 1
@@ -36,7 +28,6 @@ class SaveAsFile:
 		#TODO: save if the node should be processed
 		file.store_var(node.get_name())
 		file.store_var(node.get_type())
-		file.store_var(node.is_processing())
 		
 		var props = node.get_property_list()
 		var prop_size = props.size()
@@ -56,7 +47,6 @@ class SaveAsFile:
 					break;
 		
 		for p in props:
-			#print ("name: ", p["name"], " type: ", p["type"]);
 			if (!p["usage"] & PROPERTY_USAGE_STORAGE):
 				prop_size -= 1
 				continue
@@ -69,7 +59,8 @@ class SaveAsFile:
 				file.store_8(p["type"])
 			
 			#TODO: 	- check if type == OBJECT and object extends class Node. Save the NodePath of the object
-			# 		- all other object types are not saved
+			# 		- This would be one way to save reference to Objects if they are in the SceneTree, e.g. a dwarf has a reference to his wife
+			#		- all other object types are not saved
 			
 			file.store_var(p["name"])
 			file.store_var(value)
@@ -94,13 +85,24 @@ class SaveAsScene:
 	func _init (var filename):
 		self.filename = filename
 	
+	func _setOwnerRecursive(var node, var owner):
+		if (node.get_owner() != owner):
+			node.set_owner(owner)
+		
+		for n in node.get_children():
+			_setOwnerRecursive(n, owner)
+	
 	func finish():
 		pass
 		
 	func saveNodeTree(var world):
 		var failed = false
 		if (world != null):
+			_setOwnerRecursive(world, world)
+			
 			var pack = PackedScene.new()
+			
+			#the following line dumps a lot of text to the console
 			pack.pack(world)
 			
 			var res = ResourceSaver.save(filename, pack, ResourceSaver.FLAG_COMPRESS | ResourceSaver.FLAG_RELATIVE_PATHS )

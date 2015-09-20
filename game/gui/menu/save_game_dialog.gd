@@ -19,7 +19,7 @@ func _on_SaveDialog_confirmed():
 	var world =  get_node("/root/Node/World")
 	gameSaver.saveTree(world)
 	
-	var gameSaver = class_game_save.new("res://savegames/xml_save.xscn", class_game_save.SaveAsScene)
-	gameSaver.saveTree(world)
+	#var gameSaver = class_game_save.new(get_current_path() + ".xscn", class_game_save.SaveAsScene)
+	#gameSaver.saveTree(world)
 	
 	return;

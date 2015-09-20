@@ -11,24 +11,40 @@ func loadTree(var parentNode):
 	loadingStrategy.finish()
 	
 
+# class for loading a node tree which is saved in binary 
 class LoadAsFile:
 	var file
-	var object_creator
 	
 	func _init (var filename):
-		var object_creator_class = load("res://game/scripts/save/object_creator.gd")
-		object_creator = object_creator_class
-		
 		file = File.new()
 		file.open(filename, File.READ)
 	
+	# creates a simple object
+	#
+	# @param
+	#	obj_name : typename of the object which is created, e.g. Node
+	# @return
+	#	a reference to the object or null
+	func _createObject(var obj_name):
+		var script = GDScript.new()
+		script.set_source_code("static func create(): \n\t return " + obj_name + ".new()")
+		var error = script.reload()
+		if (error != OK):
+			return null
+			
+		return script.create()
+	
 	func loadNodeTree(parent):
-		var name = file.get_var();
-		var type = file.get_var();
-		var node = object_creator.create(type)
+		var name = file.get_var()
+		var type = file.get_var()
+		var node = _createObject(type)
+		if(node == null):
+			print ("Loading failed. Tried to create unexisting object type.")
+			return
+			
 		node.set_name(name)
-		node.set_process(file.get_var())
-		parent.add_child(node)
+		
+		
 		
 		print ("created ", name, " ", type)
 		
@@ -46,10 +62,9 @@ class LoadAsFile:
 			else:
 				node.set(name, value)
 				
-#			if (type != 20):
-#				print (type, " ", name, " " , value);
-#			else:
-#				print (type, " ", name);
+		
+		#add the node to the parent after the script file (a property) is loaded and added to the node
+		parent.add_child(node)
 		
 		var children_count = file.get_32()
 		for i in range (children_count):

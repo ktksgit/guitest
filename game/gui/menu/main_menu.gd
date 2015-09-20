@@ -6,15 +6,16 @@ func _ready():
 	# Initalization here
 	pass
 
-func _on_Start_pressed():
+
+func _on_Start_released():
 	var ingame = get_node("../IngameGUI")
 	var world = get_node("../../World")
 	
 	if(ingame != null && world != null):
 		print ("Starting")
+		get_tree().set_pause(false)
 		ingame.show()
 		hide()
-		get_tree().set_pause(false)
 		
 		if(!world.has_node("GridMap")):
 			print ("Starting new Map")
@@ -40,3 +41,9 @@ func _on_Quit_pressed():
 
 func _on_Save_pressed():
 	get_node("SaveDialog").show()
+
+
+
+
+
+
