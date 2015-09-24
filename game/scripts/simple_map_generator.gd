@@ -1,14 +1,18 @@
 extends Node
 
 var grid_map
-export(int) var distance = 0
+# TODO: Why do default value not work here
+export(int) var distance = 3
 
-export(int) var state = 0
+export(int) var state 
 export(float) var time = 0
-const TIME = 0.01
+const TIME = 1
 var cubes_built = 0
 
 func _ready():
+	distance = 2
+	state = -2
+	
 	set_process(true)
 	set_process_input(true)
 	

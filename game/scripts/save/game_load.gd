@@ -44,8 +44,6 @@ class LoadAsFile:
 			
 		node.set_name(name)
 		
-		
-		
 		print ("created ", name, " ", type)
 		
 		var prop_count = file.get_32()

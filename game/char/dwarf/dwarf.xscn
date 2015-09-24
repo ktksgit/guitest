@@ -1,49 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="2" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
-	<ext_resource path="res://game/gui/ingame/ingame_gui.gd" type="Script" index="0"></ext_resource>
+<resource_file type="PackedScene" subresource_count="4" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
+	<ext_resource path="res://game/char/dwarf/dwarf.tex" type="Texture" index="0"></ext_resource>
+	<ext_resource path="res://game/char/dwarf/dwarf_main.gd" type="Script" index="1"></ext_resource>
+	<resource type="BoxShape" path="local://1">
+		<vector3 name="extents"> 1.2, 2.2, 0.2 </vector3>
+
+	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 1 </int>
+			<int> 2 </int>
 			<string> "conns" </string>
-			<int_array  len="6"> 				2, 0, 22, 21, 2, 0 </int_array>
+			<int_array  len="12"> 				1, 0, 53, 52, 2, 0, 1, 0, 55, 54, 2, 0 </int_array>
 			<string> "names" </string>
-			<string_array  len="23">
-				<string> "IngameGUI" </string>
-				<string> "Control" </string>
-				<string> "anchor/right" </string>
-				<string> "anchor/bottom" </string>
-				<string> "focus/ignore_mouse" </string>
-				<string> "focus/stop_mouse" </string>
-				<string> "size_flags/horizontal" </string>
-				<string> "size_flags/vertical" </string>
+			<string_array  len="56">
+				<string> "Emerald" </string>
+				<string> "Sprite3D" </string>
+				<string> "_import_transform" </string>
+				<string> "transform/local" </string>
+				<string> "layers" </string>
+				<string> "geometry/visible" </string>
+				<string> "geometry/material_override" </string>
+				<string> "geometry/cast_shadow" </string>
+				<string> "geometry/receive_shadows" </string>
+				<string> "geometry/range_begin" </string>
+				<string> "geometry/range_end" </string>
+				<string> "geometry/extra_cull_margin" </string>
+				<string> "geometry/billboard" </string>
+				<string> "geometry/billboard_y" </string>
+				<string> "geometry/depth_scale" </string>
+				<string> "geometry/visible_in_all_rooms" </string>
+				<string> "geometry/use_baked_light" </string>
+				<string> "geometry/baked_light_tex_id" </string>
+				<string> "centered" </string>
+				<string> "offset" </string>
+				<string> "flip_h" </string>
+				<string> "flip_v" </string>
+				<string> "modulate" </string>
+				<string> "opacity" </string>
+				<string> "pixel_size" </string>
+				<string> "axis" </string>
+				<string> "flags/transparent" </string>
+				<string> "flags/shaded" </string>
+				<string> "flags/alpha_cut" </string>
+				<string> "texture" </string>
+				<string> "vframes" </string>
+				<string> "hframes" </string>
+				<string> "frame" </string>
+				<string> "region" </string>
+				<string> "region_rect" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
-				<string> "GridContainer" </string>
-				<string> "margin/right" </string>
-				<string> "margin/bottom" </string>
-				<string> "columns" </string>
-				<string> "MainMenu" </string>
-				<string> "Button" </string>
-				<string> "toggle_mode" </string>
-				<string> "text" </string>
-				<string> "flat" </string>
-				<string> "Dwarves" </string>
-				<string> "margin/top" </string>
-				<string> "_on_MainMenu_pressed" </string>
-				<string> "pressed" </string>
+				<string> "StaticBody" </string>
+				<string> "input/ray_pickable" </string>
+				<string> "input/capture_on_drag" </string>
+				<string> "shape_count" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "CollisionShape" </string>
+				<string> "shape" </string>
+				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
+				<string> "_on_StaticBody_mouse_enter" </string>
+				<string> "mouse_enter" </string>
+				<string> "_on_StaticBody_input_event" </string>
+				<string> "input_event" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 3 </int>
 			<string> "nodes" </string>
-			<int_array  len="98"> 				-1, -1, 1, 0, -1, 8, 2, 0, 3, 0, 4, 1, 5, 2, 6, 3, 7, 3, 8, 4, 9, 5, 0, 0, 0, 10, 10, -1, 8, 11, 6, 12, 7, 4, 1, 5, 2, 6, 3, 7, 3, 13, 0, 9, 8, 0, 1, 0, 15, 14, -1, 9, 11, 6, 12, 9, 4, 1, 5, 2, 6, 10, 7, 3, 16, 1, 17, 11, 18, 1, 0, 1, 0, 15, 19, -1, 10, 20, 12, 11, 6, 12, 13, 4, 1, 5, 2, 6, 10, 7, 3, 16, 1, 17, 14, 18, 1, 0 </int_array>
+			<int_array  len="127"> 				-1, -1, 1, 0, -1, 35, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 3, 8, 3, 9, 5, 10, 5, 11, 5, 12, 6, 13, 6, 14, 6, 15, 6, 16, 6, 17, 7, 18, 3, 19, 8, 20, 6, 21, 6, 22, 9, 23, 10, 24, 11, 25, 12, 26, 3, 27, 6, 28, 7, 29, 13, 30, 2, 31, 2, 32, 7, 33, 6, 34, 14, 35, 15, 36, 16, 0, 0, 0, 37, 37, -1, 13, 2, 0, 3, 17, 38, 3, 39, 6, 40, 2, 41, 18, 42, 19, 43, 6, 4, 2, 44, 10, 45, 5, 46, 20, 47, 20, 0, 1, 0, 48, 48, -1, 5, 2, 0, 3, 19, 49, 18, 50, 6, 51, 7, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="15" shared="false">
+			<array  len="21" shared="false">
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
+				<transform> 0.19, 0, 0, 0, 0.196418, 0, 0, 0, 0.196418, 0.00174952, -0.0089314, 0.00224257 </transform>
 				<int> 1 </int>
-				<bool> False </bool>
 				<bool> True </bool>
+				<resource name=""></resource>				<real> 0 </real>
+				<bool> False </bool>
+				<int> 0 </int>
+				<vector2> 0, 230 </vector2>
+				<color> 1, 1, 1, 1 </color>
+				<real> 1 </real>
+				<real> 0.01 </real>
 				<int> 2 </int>
 				<resource  external="0">  </resource>
+				<rect2> 0, 0, 0, 0 </rect2>
+				<resource  external="1">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
@@ -52,7 +100,7 @@
 						<string> "2D" </string>
 						<dictionary  shared="false">
 							<string> "ofs" </string>
-							<vector2> -52.9564, -47.3432 </vector2>
+							<vector2> -277.402, -33.6593 </vector2>
 							<string> "snap_grid" </string>
 							<bool> False </bool>
 							<string> "snap_offset" </string>
@@ -72,7 +120,7 @@
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "zoom" </string>
-							<real> 0.66342 </real>
+							<real> 0.9025 </real>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -98,7 +146,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 4 </real>
+									<real> 2.520679 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -108,9 +156,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0 </real>
+									<real> 0.533296 </real>
 									<string> "y_rot" </string>
-									<real> 0 </real>
+									<real> -0.624999 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -180,18 +228,10 @@
 						<int> 0 </int>
 					</dictionary>
 				</dictionary>
-				<real> 154 </real>
-				<real> 192 </real>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
-				<real> 21 </real>
-				<int> 3 </int>
-				<string> "MainMenu" </string>
-				<real> 25 </real>
-				<real> 46 </real>
-				<string> "Dwarves" </string>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19148e-009, 2.30193, 3.59324e-012 </transform>
+				<resource  resource_type="Shape" path="local://1">  </resource>
+				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53338e-010, 1.49851e-009, 3.59324e-012 </transform>
+				<vector3> 0, 0, 0 </vector3>
 			</array>
 			<string> "version" </string>
 			<int> 1 </int>

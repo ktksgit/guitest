@@ -2,12 +2,8 @@ extends VBoxContainer
 
 const SCENE_START = "res://game/world/demo/start.xscn"
 
-func _ready():
-	# Initalization here
-	pass
 
-
-func _on_Start_released():
+func _on_Start_pressed():
 	var ingame = get_node("../IngameGUI")
 	var world = get_node("../../World")
 	
@@ -15,7 +11,7 @@ func _on_Start_released():
 		print ("Starting")
 		get_tree().set_pause(false)
 		ingame.show()
-		hide()
+		self.hide()
 		
 		if(!world.has_node("GridMap")):
 			print ("Starting new Map")
@@ -28,7 +24,6 @@ func _on_Start_released():
 		
 	else:
 		print ("Start failed")
-	
 
 
 func _on_Load_pressed():
@@ -41,9 +36,3 @@ func _on_Quit_pressed():
 
 func _on_Save_pressed():
 	get_node("SaveDialog").show()
-
-
-
-
-
-
