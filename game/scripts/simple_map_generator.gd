@@ -9,10 +9,15 @@ export(float) var time = 0
 const TIME = 1
 var cubes_built = 0
 
-func _ready():
+func _init():
+	# there is a order how the function init and ready are called when a game is loaded:
+	# 1. _init()
+	# 2. all properties are set (defining default values here)
+	# 3. _ready()
 	distance = 2
 	state = -2
-	
+
+func _ready():
 	set_process(true)
 	set_process_input(true)
 	
