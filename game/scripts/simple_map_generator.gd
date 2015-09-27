@@ -1,10 +1,11 @@
+tool
 extends Node
 
 var grid_map
 # TODO: Why do default value not work here
-export(int) var distance = 3
+export(int) var distance
 
-export(int) var state 
+export(int) var state
 export(float) var time = 0
 const TIME = 1
 var cubes_built = 0
@@ -12,10 +13,10 @@ var cubes_built = 0
 func _init():
 	# there is a order how the function init and ready are called when a game is loaded:
 	# 1. _init()
-	# 2. all properties are set (defining default values here)
+	# 2. all properties are loaded from the editor (define default values here)
 	# 3. _ready()
-	distance = 2
-	state = -2
+	pass
+
 
 func _ready():
 	set_process(true)

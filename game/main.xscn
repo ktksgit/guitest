@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="6" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
-	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script" index="3"></ext_resource>
-	<ext_resource path="res://game/scripts/camera.gd" type="Script" index="2"></ext_resource>
-	<ext_resource path="res://game/scripts/selector.gd" type="Script" index="4"></ext_resource>
+<resource_file type="PackedScene" subresource_count="7" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
 	<ext_resource path="res://game/gui/menu/main_menu.xscn" type="PackedScene" index="0"></ext_resource>
 	<ext_resource path="res://game/gui/ingame/ingame_gui.xscn" type="PackedScene" index="1"></ext_resource>
+	<ext_resource path="res://game/scripts/selector.gd" type="Script" index="4"></ext_resource>
+	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script" index="3"></ext_resource>
+	<ext_resource path="res://game/scripts/camera.gd" type="Script" index="2"></ext_resource>
+	<resource type="PlaneShape" path="local://1">
+		<plane name="plane"> 0, 1, 0, 0 </plane>
+
+	</resource>
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
@@ -12,7 +16,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="61">
+			<string_array  len="77">
 				<string> "Node" </string>
 				<string> "__meta__" </string>
 				<string> "GUI" </string>
@@ -72,15 +76,31 @@
 				<string> "distance" </string>
 				<string> "state" </string>
 				<string> "time" </string>
+				<string> "Area" </string>
+				<string> "StaticBody" </string>
+				<string> "input/ray_pickable" </string>
+				<string> "input/capture_on_drag" </string>
+				<string> "shape_count" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "CollisionShape" </string>
+				<string> "shape" </string>
+				<string> "trigger" </string>
+				<string> "_update_shape_index" </string>
 				<string> "Globals" </string>
 				<string> "Selector" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 10 </int>
+			<int> 12 </int>
 			<string> "nodes" </string>
-			<int_array  len="186"> 				-1, -1, 0, 0, -1, 1, 1, 0, 0, 0, 0, 3, 2, -1, 6, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 1, 6, 0, 1, 0, 10, 9, 7, 6, 11, 8, 12, 9, 13, 9, 14, 10, 15, 10, 1, 11, 0, 1, 0, 17, 16, 12, 3, 11, 8, 18, 13, 1, 14, 0, 0, 0, 0, 19, -1, 2, 4, 2, 1, 15, 0, 4, 0, 20, 20, -1, 14, 21, 16, 22, 17, 23, 18, 24, 19, 25, 20, 26, 21, 27, 2, 28, 22, 29, 23, 30, 24, 31, 4, 32, 4, 33, 25, 34, 26, 0, 4, 0, 35, 35, -1, 21, 21, 16, 22, 27, 36, 2, 37, 22, 38, 13, 39, 18, 40, 28, 41, 29, 42, 29, 43, 13, 44, 4, 45, 30, 46, 4, 47, 19, 48, 28, 49, 24, 50, 18, 51, 18, 52, 4, 53, 31, 54, 32, 0, 4, 0, 0, 55, -1, 4, 33, 33, 56, 18, 57, 18, 58, 18, 0, 0, 0, 0, 59, -1, 0, 0, 8, 0, 0, 60, -1, 1, 33, 34, 0 </int_array>
+			<int_array  len="232"> 				-1, -1, 0, 0, -1, 1, 1, 0, 0, 0, 0, 3, 2, -1, 6, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 1, 6, 0, 1, 0, 10, 9, 7, 6, 11, 8, 12, 9, 13, 9, 14, 10, 15, 10, 1, 11, 0, 1, 0, 17, 16, 12, 3, 11, 8, 18, 13, 1, 14, 0, 0, 0, 0, 19, -1, 1, 4, 2, 0, 4, 0, 20, 20, -1, 14, 21, 15, 22, 16, 23, 17, 24, 18, 25, 19, 26, 20, 27, 2, 28, 21, 29, 22, 30, 23, 31, 4, 32, 4, 33, 24, 34, 25, 0, 4, 0, 35, 35, -1, 21, 21, 15, 22, 26, 36, 2, 37, 21, 38, 13, 39, 17, 40, 27, 41, 28, 42, 28, 43, 13, 44, 4, 45, 29, 46, 4, 47, 18, 48, 27, 49, 23, 50, 17, 51, 17, 52, 4, 53, 30, 54, 31, 0, 4, 0, 0, 55, -1, 4, 33, 32, 56, 33, 57, 34, 58, 35, 0, 4, 0, 60, 59, -1, 13, 21, 15, 22, 36, 61, 21, 62, 21, 63, 2, 64, 37, 65, 15, 66, 13, 36, 2, 67, 27, 68, 4, 69, 38, 70, 38, 0, 8, 0, 71, 71, -1, 4, 21, 15, 72, 37, 73, 13, 74, 17, 0, 0, 0, 0, 75, -1, 0, 0, 10, 0, 0, 76, -1, 1, 33, 39, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="35" shared="false">
+			<array  len="40" shared="false">
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
@@ -135,7 +155,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 25.364721 </real>
+									<real> 18.643827 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -145,9 +165,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.825 </real>
+									<real> 0.5375 </real>
 									<string> "y_rot" </string>
-									<real> -0.825 </real>
+									<real> -0.8 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -497,10 +517,6 @@
 					<string> "_editor_collapsed" </string>
 					<bool> True </bool>
 				</dictionary>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0037837, 1.08366, 1.93647 </transform>
 				<int> 0 </int>
@@ -511,13 +527,19 @@
 				<int> 1048575 </int>
 				<resource name=""></resource>				<resource  external="2">  </resource>
 				<nil>  </nil>
-				<transform> 0.874857, 0, 0.484382, -0.193852, 0.916426, 0.350121, -0.4439, -0.400204, 0.801742, 0, 4.58095, 4.40769 </transform>
+				<transform> 0.972843, -0.0980702, 0.209664, 0, 0.905807, 0.42369, -0.231467, -0.412184, 0.881208, 0, 3.21536, 5.74779 </transform>
 				<real> 1 </real>
 				<color> 1, 1, 1, 1 </color>
 				<real> 0.05 </real>
 				<real> 0.5 </real>
 				<real> 2 </real>
 				<resource  external="3">  </resource>
+				<int> 3 </int>
+				<int> -3 </int>
+				<real> 0.489443 </real>
+				<transform> 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 </transform>
+				<resource  resource_type="Shape" path="local://1">  </resource>
+				<vector3> 0, 0, 0 </vector3>
 				<resource  external="4">  </resource>
 			</array>
 			<string> "version" </string>

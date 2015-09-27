@@ -1,11 +1,11 @@
 extends VBoxContainer
 
 const SCENE_START = "res://game/world/demo/start.xscn"
-
+const WORLD_PATH = "/root/Node/World"
 
 func _on_Start_pressed():
 	var ingame = get_node("../IngameGUI")
-	var world = get_node("../../World")
+	var world = get_node(WORLD_PATH)
 	
 	if(ingame != null && world != null):
 		print ("Starting")
@@ -18,9 +18,11 @@ func _on_Start_pressed():
 			var scene = load(SCENE_START)
 			var node = scene.instance()
 			
-			get_node("/root/Node/World").add_child(node)
-			node.set_pause_mode(PAUSE_MODE_INHERIT)
-			node.show()
+			var children = node.get_children()
+			for child in children:
+				node.remove_child(child)
+				world.add_child(child)
+			node.free()
 		
 	else:
 		print ("Start failed")
