@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="7" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
+<resource_file type="PackedScene" subresource_count="8" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
+	<ext_resource path="res://game/scripts/selector.gd" type="Script" index="4"></ext_resource>
+	<ext_resource path="res://game/scripts/camera.gd" type="Script" index="2"></ext_resource>
+	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script" index="3"></ext_resource>
+	<ext_resource path="res://game/scripts/pathfinder.gd" type="Script" index="5"></ext_resource>
 	<ext_resource path="res://game/gui/menu/main_menu.xscn" type="PackedScene" index="0"></ext_resource>
 	<ext_resource path="res://game/gui/ingame/ingame_gui.xscn" type="PackedScene" index="1"></ext_resource>
-	<ext_resource path="res://game/scripts/selector.gd" type="Script" index="4"></ext_resource>
-	<ext_resource path="res://game/scripts/simple_map_generator.gd" type="Script" index="3"></ext_resource>
-	<ext_resource path="res://game/scripts/camera.gd" type="Script" index="2"></ext_resource>
 	<resource type="PlaneShape" path="local://1">
 		<plane name="plane"> 0, 1, 0, 0 </plane>
 
@@ -16,7 +17,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="77">
+			<string_array  len="80">
 				<string> "Node" </string>
 				<string> "__meta__" </string>
 				<string> "GUI" </string>
@@ -94,13 +95,16 @@
 				<string> "_update_shape_index" </string>
 				<string> "Globals" </string>
 				<string> "Selector" </string>
+				<string> "Pathfinder" </string>
+				<string> "Navigation" </string>
+				<string> "up_vector" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 12 </int>
+			<int> 13 </int>
 			<string> "nodes" </string>
-			<int_array  len="232"> 				-1, -1, 0, 0, -1, 1, 1, 0, 0, 0, 0, 3, 2, -1, 6, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 1, 6, 0, 1, 0, 10, 9, 7, 6, 11, 8, 12, 9, 13, 9, 14, 10, 15, 10, 1, 11, 0, 1, 0, 17, 16, 12, 3, 11, 8, 18, 13, 1, 14, 0, 0, 0, 0, 19, -1, 1, 4, 2, 0, 4, 0, 20, 20, -1, 14, 21, 15, 22, 16, 23, 17, 24, 18, 25, 19, 26, 20, 27, 2, 28, 21, 29, 22, 30, 23, 31, 4, 32, 4, 33, 24, 34, 25, 0, 4, 0, 35, 35, -1, 21, 21, 15, 22, 26, 36, 2, 37, 21, 38, 13, 39, 17, 40, 27, 41, 28, 42, 28, 43, 13, 44, 4, 45, 29, 46, 4, 47, 18, 48, 27, 49, 23, 50, 17, 51, 17, 52, 4, 53, 30, 54, 31, 0, 4, 0, 0, 55, -1, 4, 33, 32, 56, 33, 57, 34, 58, 35, 0, 4, 0, 60, 59, -1, 13, 21, 15, 22, 36, 61, 21, 62, 21, 63, 2, 64, 37, 65, 15, 66, 13, 36, 2, 67, 27, 68, 4, 69, 38, 70, 38, 0, 8, 0, 71, 71, -1, 4, 21, 15, 72, 37, 73, 13, 74, 17, 0, 0, 0, 0, 75, -1, 0, 0, 10, 0, 0, 76, -1, 1, 33, 39, 0 </int_array>
+			<int_array  len="247"> 				-1, -1, 0, 0, -1, 1, 1, 0, 0, 0, 0, 3, 2, -1, 5, 4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 0, 1, 0, 10, 9, 6, 6, 11, 7, 12, 8, 13, 8, 14, 9, 15, 9, 1, 10, 0, 1, 0, 17, 16, 11, 3, 11, 7, 18, 12, 1, 13, 0, 0, 0, 0, 19, -1, 1, 4, 2, 0, 4, 0, 20, 20, -1, 14, 21, 14, 22, 15, 23, 16, 24, 17, 25, 18, 26, 19, 27, 2, 28, 20, 29, 21, 30, 22, 31, 4, 32, 4, 33, 23, 34, 24, 0, 4, 0, 35, 35, -1, 21, 21, 14, 22, 25, 36, 2, 37, 20, 38, 12, 39, 16, 40, 26, 41, 27, 42, 27, 43, 12, 44, 4, 45, 28, 46, 4, 47, 17, 48, 26, 49, 22, 50, 16, 51, 16, 52, 4, 53, 29, 54, 30, 0, 4, 0, 0, 55, -1, 4, 33, 31, 56, 32, 57, 33, 58, 34, 0, 4, 0, 60, 59, -1, 14, 21, 14, 22, 35, 61, 20, 62, 20, 63, 2, 64, 36, 65, 37, 66, 12, 36, 2, 67, 26, 68, 4, 69, 38, 70, 38, 1, 39, 0, 8, 0, 71, 71, -1, 5, 21, 14, 22, 37, 72, 36, 73, 12, 74, 16, 0, 0, 0, 0, 75, -1, 0, 0, 10, 0, 0, 76, -1, 1, 33, 40, 0, 10, 0, 78, 77, -1, 3, 21, 14, 79, 41, 33, 42, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="40" shared="false">
+			<array  len="43" shared="false">
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
@@ -155,7 +159,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 18.643827 </real>
+									<real> 29.585415 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -165,9 +169,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.5375 </real>
+									<real> 0.770797 </real>
 									<string> "y_rot" </string>
-									<real> -0.8 </real>
+									<real> -0.8375 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -242,10 +246,6 @@
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
 				<vector2> 1, 1 </vector2>
-				<dictionary  shared="false">
-					<string> "_editor_collapsed" </string>
-					<bool> True </bool>
-				</dictionary>
 				<resource  external="0">  </resource>
 				<node_path> "" </node_path>
 				<real> 99 </real>
@@ -536,11 +536,18 @@
 				<resource  external="3">  </resource>
 				<int> 3 </int>
 				<int> -3 </int>
-				<real> 0.489443 </real>
+				<real> 0.209004 </real>
 				<transform> 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 </transform>
 				<resource  resource_type="Shape" path="local://1">  </resource>
+				<transform> 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 </transform>
 				<vector3> 0, 0, 0 </vector3>
+				<dictionary  shared="false">
+					<string> "_editor_collapsed" </string>
+					<bool> True </bool>
+				</dictionary>
 				<resource  external="4">  </resource>
+				<vector3> 0, 1, 0 </vector3>
+				<resource  external="5">  </resource>
 			</array>
 			<string> "version" </string>
 			<int> 1 </int>

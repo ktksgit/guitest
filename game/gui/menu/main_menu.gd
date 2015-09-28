@@ -3,6 +3,9 @@ extends VBoxContainer
 const SCENE_START = "res://game/world/demo/start.xscn"
 const WORLD_PATH = "/root/Node/World"
 
+func _ready():
+	get_tree().set_pause(true)
+
 func _on_Start_pressed():
 	var ingame = get_node("../IngameGUI")
 	var world = get_node(WORLD_PATH)
@@ -13,7 +16,7 @@ func _on_Start_pressed():
 		ingame.show()
 		self.hide()
 		
-		if(!world.has_node("GridMap")):
+		if(!world.has_node("Map")):
 			print ("Starting new Map")
 			var scene = load(SCENE_START)
 			var node = scene.instance()

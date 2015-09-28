@@ -80,4 +80,6 @@ func _input(event):
 			
 
 func _initialize():
-	grid_map = get_parent().get_node("GridMap")
+	var parent = get_parent()
+	if (parent.has_node("Map")):
+		grid_map = parent.get_node("Map")

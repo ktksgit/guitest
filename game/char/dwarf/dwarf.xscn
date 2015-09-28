@@ -9,11 +9,11 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 2 </int>
+			<int> 0 </int>
 			<string> "conns" </string>
-			<int_array  len="12"> 				1, 0, 53, 52, 2, 0, 1, 0, 55, 54, 2, 0 </int_array>
+			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="56">
+			<string_array  len="52">
 				<string> "Emerald" </string>
 				<string> "Sprite3D" </string>
 				<string> "_import_transform" </string>
@@ -66,10 +66,6 @@
 				<string> "shape" </string>
 				<string> "trigger" </string>
 				<string> "_update_shape_index" </string>
-				<string> "_on_StaticBody_mouse_enter" </string>
-				<string> "mouse_enter" </string>
-				<string> "_on_StaticBody_input_event" </string>
-				<string> "input_event" </string>
 			</string_array>
 			<string> "node_count" </string>
 			<int> 3 </int>
@@ -156,9 +152,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.533296 </real>
+									<real> 0.620796 </real>
 									<string> "y_rot" </string>
-									<real> -0.624999 </real>
+									<real> -0.55 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
