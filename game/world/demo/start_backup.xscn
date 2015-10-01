@@ -80,7 +80,7 @@
 			<array  len="35" shared="false">
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "3D" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -142,9 +142,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.333296 </real>
+									<real> 0.408296 </real>
 									<string> "y_rot" </string>
-									<real> -0.02499 </real>
+									<real> -0.88749 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -392,8 +392,8 @@
 				<resource  external="2">  </resource>
 				<nil>  </nil>
 				<resource  external="3">  </resource>
-				<int> 3 </int>
-				<int> -3 </int>
+				<int> 5 </int>
+				<int> -1 </int>
 				<real> 0.10487 </real>
 				<transform> 0.899822, -0.19304, 0.391223, 0.0168307, 0.911466, 0.411031, -0.435932, -0.36327, 0.823407, 3.09747, 2.72345, 6.49721 </transform>
 				<real> 0.9 </real>

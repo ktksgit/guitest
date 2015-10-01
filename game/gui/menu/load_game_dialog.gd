@@ -10,8 +10,6 @@ func _ready():
 
 
 func _on_LoadDialog_confirmed():
-	class_game_load = ResourceLoader.load("res://game/scripts/save/game_load.gd", "", true)
-	
 	var base =  get_node("/root/Node")
 	
 	#delete old World node
@@ -28,9 +26,15 @@ func _on_LoadDialog_confirmed():
 	#base.get_node("World/GridMap").show()
 	
 	self.hide()
+	var ingame = get_node("../../IngameGUI")
+	var mainMenu = get_node("../../MainMenu")
 	
-	#pause the game
-	get_tree().set_pause(true)
+	if(ingame != null && mainMenu != null):
+		print ("Starting")
+		ingame.show()
+		mainMenu.hide()
+		get_tree().set_pause(false)
+		
 	return
 	
 	

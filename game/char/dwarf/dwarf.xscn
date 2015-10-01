@@ -13,7 +13,7 @@
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 			<string> "names" </string>
-			<string_array  len="52">
+			<string_array  len="51">
 				<string> "Emerald" </string>
 				<string> "Sprite3D" </string>
 				<string> "_import_transform" </string>
@@ -51,6 +51,9 @@
 				<string> "region_rect" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
+				<string> "walkPath" </string>
+				<string> "currentWalkIndex" </string>
+				<string> "massu" </string>
 				<string> "StaticBody" </string>
 				<string> "input/ray_pickable" </string>
 				<string> "input/capture_on_drag" </string>
@@ -62,17 +65,13 @@
 				<string> "bounce" </string>
 				<string> "constant_linear_velocity" </string>
 				<string> "constant_angular_velocity" </string>
-				<string> "CollisionShape" </string>
-				<string> "shape" </string>
-				<string> "trigger" </string>
-				<string> "_update_shape_index" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 3 </int>
+			<int> 2 </int>
 			<string> "nodes" </string>
-			<int_array  len="127"> 				-1, -1, 1, 0, -1, 35, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 3, 8, 3, 9, 5, 10, 5, 11, 5, 12, 6, 13, 6, 14, 6, 15, 6, 16, 6, 17, 7, 18, 3, 19, 8, 20, 6, 21, 6, 22, 9, 23, 10, 24, 11, 25, 12, 26, 3, 27, 6, 28, 7, 29, 13, 30, 2, 31, 2, 32, 7, 33, 6, 34, 14, 35, 15, 36, 16, 0, 0, 0, 37, 37, -1, 13, 2, 0, 3, 17, 38, 3, 39, 6, 40, 2, 41, 18, 42, 19, 43, 6, 4, 2, 44, 10, 45, 5, 46, 20, 47, 20, 0, 1, 0, 48, 48, -1, 5, 2, 0, 3, 19, 49, 18, 50, 6, 51, 7, 0 </int_array>
+			<int_array  len="116"> 				-1, -1, 1, 0, -1, 38, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 3, 8, 3, 9, 5, 10, 5, 11, 5, 12, 6, 13, 6, 14, 6, 15, 6, 16, 6, 17, 7, 18, 3, 19, 8, 20, 6, 21, 6, 22, 9, 23, 10, 24, 11, 25, 12, 26, 3, 27, 6, 28, 7, 29, 13, 30, 2, 31, 2, 32, 7, 33, 6, 34, 14, 35, 15, 36, 16, 37, 17, 38, 7, 39, 18, 0, 0, 0, 40, 40, -1, 13, 2, 0, 3, 19, 41, 3, 42, 6, 43, 2, 44, 20, 45, 21, 46, 6, 4, 2, 47, 10, 48, 5, 49, 22, 50, 22, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="21" shared="false">
+			<array  len="23" shared="false">
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
 				<transform> 0.19, 0, 0, 0, 0.196418, 0, 0, 0, 0.196418, 0.00174952, -0.0089314, 0.00224257 </transform>
 				<int> 1 </int>
@@ -90,7 +89,7 @@
 				<resource  external="1">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "3D" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -152,9 +151,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.620796 </real>
+									<real> 0.570796 </real>
 									<string> "y_rot" </string>
-									<real> -0.55 </real>
+									<real> -0.725 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -224,6 +223,8 @@
 						<int> 0 </int>
 					</dictionary>
 				</dictionary>
+				<nil>  </nil>
+				<string> "Massupilami" </string>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19148e-009, 2.30193, 3.59324e-012 </transform>
 				<resource  resource_type="Shape" path="local://1">  </resource>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53338e-010, 1.49851e-009, 3.59324e-012 </transform>

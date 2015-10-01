@@ -1,13 +1,29 @@
 extends VBoxContainer
 
-const SCENE_START = "res://game/world/demo/start.xscn"
 const WORLD_PATH = "/root/Node/World"
+const INGAME_GUI_PATH = "/root/Node/GUI/IngameGUI"
+
+var bGameStarted = false;
 
 func _ready():
 	get_tree().set_pause(true)
 
 func _on_Start_pressed():
-	var ingame = get_node("../IngameGUI")
+	var ingame = get_node(INGAME_GUI_PATH)
+	
+	if(ingame != null):
+		if(bGameStarted):
+			get_tree().set_pause(false)
+			ingame.show()
+			hide()
+			return
+	
+	var scenarionDlg = get_node("ScenarioDialog")
+	scenarionDlg.show_modal(true)
+	return
+
+func loadScenario(var name):
+	var ingame = get_node(INGAME_GUI_PATH)
 	var world = get_node(WORLD_PATH)
 	
 	if(ingame != null && world != null):
@@ -16,16 +32,17 @@ func _on_Start_pressed():
 		ingame.show()
 		self.hide()
 		
-		if(!world.has_node("Map")):
+		if(!bGameStarted):
 			print ("Starting new Map")
-			var scene = load(SCENE_START)
+			var scene = load(name)
 			var node = scene.instance()
-			
+			print ("Scene instance created. Reparenting children")
 			var children = node.get_children()
 			for child in children:
 				node.remove_child(child)
 				world.add_child(child)
 			node.free()
+			bGameStarted = true
 		
 	else:
 		print ("Start failed")

@@ -1,12 +1,11 @@
-tool
 extends Node
 
 var grid_map
-# TODO: Why do default value not work here
-export(int) var distance
 
-export(int) var state
+export(int) var distance
+export(int) var state = 0
 export(float) var time = 0
+
 const TIME = 1
 var cubes_built = 0
 
@@ -19,6 +18,7 @@ func _init():
 
 
 func _ready():
+	print ("state:", state)
 	set_process(true)
 	set_process_input(true)
 	
@@ -83,3 +83,5 @@ func _initialize():
 	var parent = get_parent()
 	if (parent.has_node("Map")):
 		grid_map = parent.get_node("Map")
+		if(grid_map == null):
+			print("grid map not found")

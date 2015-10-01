@@ -52,6 +52,10 @@ class SaveAsFile:
 				continue
 			
 			var value = node.get(p["name"])
+			if (p["name"].begins_with("shapes/")):
+				print ("name: ", p["name"])
+				print("value: ", value)
+				print ("type: ", p["type"])
 			if (p["type"] == TYPE_OBJECT && value != null && value extends Resource):
 				value = value.get_path()
 				file.store_8(255)

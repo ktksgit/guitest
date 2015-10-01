@@ -11,8 +11,11 @@ export(int) var currentWalkIndex = 0
 export(String) var massu = "Massupilami"
 
 func _ready():
-	set_process(true)
+	var shape = BoxShape.new()
+	shape.set_extents(Vector3(1.2, 2.2, 0.2))
+	get_node("StaticBody").add_shape(shape)
 	
+	set_process(true)
 	pass
 
 func _process(delta):

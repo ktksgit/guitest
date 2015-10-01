@@ -5,9 +5,12 @@ func _init(var s_filename, var strategy_class):
 	filename = s_filename
 	strategy = strategy_class
 	
-func loadTree(var parentNode):
+func loadTree(var world):
 	var loadingStrategy = strategy.new(filename)
-	loadingStrategy.loadNodeTree(parentNode)
+	var parent = world.get_parent()
+	parent.remove_child(world)
+	loadingStrategy.loadNodeTree(world)
+	parent.add_child(world)
 	loadingStrategy.finish()
 	
 
@@ -44,7 +47,7 @@ class LoadAsFile:
 			
 		node.set_name(name)
 		
-		print ("created ", name, " ", type)
+		print ("created ", name, " ", type, "-----------------------")
 		
 		var prop_count = file.get_32()
 		print ("prop_count ", prop_count)
@@ -54,12 +57,20 @@ class LoadAsFile:
 			name = file.get_var()
 			var value = file.get_var()
 			
+			if(name.begins_with("shape")):
+				print("name:", name)
+				print("type:", type)
+				print("value:", value)
+			
 			if (type == 255):
 				var resource = load (value)
 				node.set(name, resource)
 			else:
 				node.set(name, value)
 				
+		
+		if(node extends CollisionShape):
+			node._add_to_collision_object(parent)
 		
 		#add the node to the parent after the script file (a property) is loaded and added to the node
 		parent.add_child(node)

@@ -23,6 +23,7 @@ func _ready():
 
 func _fixed_process(delta):
 	if(bLeftMouseButton && selDwarf == null):
+		bLeftMouseButton = false
 		var world = get_node(CAMERA_PATH).get_world()
 		var spaceState = world.get_direct_space_state()
 		
@@ -35,15 +36,16 @@ func _fixed_process(delta):
 
 				selDwarf = sel
 		
-		bLeftMouseButton = false
+		
 		
 	if(bLeftMouseButton && selDwarf != null):
+		bLeftMouseButton = false
 		var world = get_node(CAMERA_PATH).get_world()
 		var spaceState = world.get_direct_space_state()
 		
 		var dictionary = spaceState.intersect_ray(vFrom, vTo, [nSelectionPlane, selDwarf])
 		
-		if(dictionary.empty()):
+		if(dictionary.empty() && has_node(GRID_MAP_PATH)):
 			var pathfinder = get_node(PATHFINDER_PATH)
 			
 			pathfinder.start(get_node(GRID_MAP_PATH))
@@ -52,9 +54,10 @@ func _fixed_process(delta):
 			if(vDest != null && selDwarf.get_parent().has_method("walk")):
 				selDwarf.get_parent().walk(vDest, pathfinder)
 		
-		bLeftMouseButton = false
+		
 	
 	if(bMiddleMouseButton && selDwarf != null):
+		bMiddleMouseButton = false
 		var world = get_node(CAMERA_PATH).get_world()
 		var spaceState = world.get_direct_space_state()
 		
@@ -66,9 +69,10 @@ func _fixed_process(delta):
 			if(dest != null && selDwarf.get_parent().has_method("dig")):
 				selDwarf.get_parent().dig(dest)
 		
-		bMiddleMouseButton = false
+		
 	
 func _input(event):
+	#TFIXME input is triggered even if GUI Element is clicked!
 	if (event.type == InputEvent.MOUSE_BUTTON && event.is_pressed()):
 		if(event.button_index == 1):
 			var cam = get_viewport().get_camera()
