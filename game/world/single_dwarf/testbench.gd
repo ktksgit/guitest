@@ -1,4 +1,3 @@
-
 extends Node
 
 var bSaved = true
@@ -8,7 +7,13 @@ func _ready():
 	#var shape = load("res://game/char/dwarf/dwarf.xscn::1")
 	
 	var parent = get_parent()
-		
+	
+	var node = get_node("/root/Node/World/Emerald")
+	
+	var adb = inst2dict(node)
+	
+	node = dict2inst(adb)
+	
 	var node = parent.get_node("Area")
 	if(node != null):
 		parent.remove_child(node)

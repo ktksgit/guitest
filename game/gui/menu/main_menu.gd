@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends Panel
 
 const WORLD_PATH = "/root/Node/World"
 const INGAME_GUI_PATH = "/root/Node/GUI/IngameGUI"
@@ -9,6 +9,7 @@ func _ready():
 	get_tree().set_pause(true)
 
 func _on_Start_pressed():
+	get_tree().set_input_as_handled()
 	var ingame = get_node(INGAME_GUI_PATH)
 	
 	if(ingame != null):

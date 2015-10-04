@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="5" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
-	<ext_resource path="res://game/gui/menu/load_game_dialog.gd" type="Script" index="1"></ext_resource>
 	<ext_resource path="res://game/gui/menu/main_menu.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://game/gui/menu/load_game_dialog.gd" type="Script" index="1"></ext_resource>
 	<ext_resource path="res://game/gui/menu/save_game_dialog.gd" type="Script" index="2"></ext_resource>
 	<ext_resource path="res://game/gui/menu/scenario_dialog.gd" type="Script" index="3"></ext_resource>
 	<main_resource>
@@ -9,11 +9,11 @@
 			<string> "conn_count" </string>
 			<int> 8 </int>
 			<string> "conns" </string>
-			<int_array  len="48"> 				1, 0, 35, 34, 2, 0, 2, 0, 35, 36, 2, 0, 3, 0, 35, 37, 2, 0, 4, 0, 35, 38, 2, 0, 5, 5, 40, 39, 2, 0, 6, 6, 40, 41, 2, 0, 7, 7, 40, 42, 2, 0, 8, 7, 44, 43, 2, 0 </int_array>
+			<int_array  len="48"> 				1, 0, 34, 33, 2, 0, 2, 0, 34, 35, 2, 0, 3, 0, 34, 36, 2, 0, 4, 0, 34, 37, 2, 0, 5, 5, 39, 38, 2, 0, 6, 6, 39, 40, 2, 0, 7, 7, 39, 41, 2, 0, 8, 7, 43, 42, 2, 0 </int_array>
 			<string> "names" </string>
-			<string_array  len="45">
+			<string_array  len="44">
 				<string> "MainMenu" </string>
-				<string> "VBoxContainer" </string>
+				<string> "Panel" </string>
 				<string> "anchor/left" </string>
 				<string> "anchor/top" </string>
 				<string> "anchor/right" </string>
@@ -26,7 +26,6 @@
 				<string> "focus/stop_mouse" </string>
 				<string> "size_flags/horizontal" </string>
 				<string> "size_flags/vertical" </string>
-				<string> "alignment" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "Start" </string>
@@ -61,19 +60,18 @@
 			<string> "node_count" </string>
 			<int> 9 </int>
 			<string> "nodes" </string>
-			<int_array  len="275"> 				-1, -1, 1, 0, -1, 15, 2, 0, 3, 0, 4, 0, 5, 0, 6, 1, 7, 1, 8, 2, 9, 2, 10, 3, 11, 3, 12, 4, 13, 4, 14, 5, 15, 6, 16, 7, 0, 0, 0, 18, 17, -1, 9, 8, 8, 9, 9, 10, 3, 11, 10, 12, 4, 13, 4, 19, 3, 20, 11, 21, 3, 0, 0, 0, 18, 22, -1, 10, 7, 12, 8, 8, 9, 13, 10, 3, 11, 10, 12, 4, 13, 4, 19, 3, 20, 14, 21, 3, 0, 0, 0, 18, 23, -1, 10, 7, 15, 8, 8, 9, 16, 10, 3, 11, 10, 12, 4, 13, 4, 19, 3, 20, 17, 21, 3, 0, 0, 0, 18, 24, -1, 10, 7, 18, 8, 8, 9, 19, 10, 3, 11, 10, 12, 4, 13, 4, 19, 3, 20, 20, 21, 3, 0, 0, 0, 26, 25, -1, 16, 27, 3, 2, 0, 3, 0, 4, 0, 5, 0, 6, 21, 7, 8, 8, 22, 9, 23, 10, 3, 11, 10, 12, 4, 13, 4, 28, 10, 29, 24, 15, 25, 0, 0, 0, 26, 30, -1, 12, 27, 3, 6, 26, 7, 27, 8, 28, 9, 29, 10, 3, 11, 10, 12, 4, 13, 4, 28, 3, 29, 30, 15, 31, 0, 0, 0, 32, 31, -1, 16, 27, 3, 2, 0, 3, 0, 4, 0, 5, 0, 6, 1, 7, 1, 8, 2, 9, 2, 10, 3, 11, 10, 12, 4, 13, 4, 28, 3, 29, 32, 15, 33, 0, 7, 0, 33, 33, -1, 8, 6, 34, 7, 35, 8, 36, 9, 37, 10, 3, 11, 10, 12, 4, 13, 4, 0 </int_array>
+			<int_array  len="273"> 				-1, -1, 1, 0, -1, 14, 2, 0, 3, 0, 4, 0, 5, 0, 6, 1, 7, 1, 8, 2, 9, 2, 10, 3, 11, 3, 12, 4, 13, 4, 14, 5, 15, 6, 0, 0, 0, 17, 16, -1, 9, 8, 7, 9, 8, 10, 3, 11, 9, 12, 4, 13, 4, 18, 3, 19, 10, 20, 3, 0, 0, 0, 17, 21, -1, 10, 7, 11, 8, 7, 9, 12, 10, 3, 11, 9, 12, 4, 13, 4, 18, 3, 19, 13, 20, 3, 0, 0, 0, 17, 22, -1, 10, 7, 14, 8, 7, 9, 15, 10, 3, 11, 9, 12, 4, 13, 4, 18, 3, 19, 16, 20, 3, 0, 0, 0, 17, 23, -1, 10, 7, 17, 8, 7, 9, 18, 10, 3, 11, 9, 12, 4, 13, 4, 18, 3, 19, 19, 20, 3, 0, 0, 0, 25, 24, -1, 16, 26, 3, 2, 0, 3, 0, 4, 0, 5, 0, 6, 20, 7, 7, 8, 21, 9, 22, 10, 3, 11, 9, 12, 4, 13, 4, 27, 9, 28, 23, 14, 24, 0, 0, 0, 25, 29, -1, 12, 26, 3, 6, 25, 7, 26, 8, 27, 9, 28, 10, 3, 11, 9, 12, 4, 13, 4, 27, 3, 28, 29, 14, 30, 0, 0, 0, 31, 30, -1, 16, 26, 3, 2, 0, 3, 0, 4, 0, 5, 0, 6, 1, 7, 1, 8, 2, 9, 2, 10, 3, 11, 9, 12, 4, 13, 4, 27, 3, 28, 31, 14, 32, 0, 7, 0, 32, 32, -1, 8, 6, 33, 7, 34, 8, 35, 9, 36, 10, 3, 11, 9, 12, 4, 13, 4, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="38" shared="false">
+			<array  len="37" shared="false">
 				<int> 3 </int>
 				<real> 100 </real>
 				<real> -100 </real>
 				<bool> False </bool>
 				<int> 2 </int>
-				<int> 0 </int>
 				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>

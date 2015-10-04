@@ -11,6 +11,7 @@ func _ready():
 	list.add_item("Single Dwarf")
 
 func _on_ScenarioDialog_confirmed():
+	get_tree().set_input_as_handled()
 	hide()
 	if(selection == 0):
 		get_parent().loadScenario(SCENE_START)
