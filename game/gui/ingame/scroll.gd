@@ -14,6 +14,10 @@ func _process(delta):
 	if(bScrollVertical != 0):
 		var cam = get_viewport().get_camera()
 		cam.move(Vector3(0, bScrollVertical, 0) * delta)
+		
+	var viewport = get_viewport()
+	var mouse = viewport.get_mouse_pos()
+
 
 func _on_ScrollRight_mouse_enter():
 	bScrollHorizontal = 1
@@ -27,14 +31,11 @@ func _on_ScrollUp_mouse_enter():
 func _on_ScrollUp_mouse_exit():
 	bScrollVertical = 0
 
-
 func _on_ScrollLeft_mouse_enter():
 	bScrollHorizontal = -1
 
-
 func _on_ScrollLeft_mouse_exit():
 	bScrollHorizontal = 0
-
 
 func _on_ScrollDown_mouse_enter():
 	bScrollVertical = -1

@@ -10,7 +10,7 @@ func _ready():
 func start(var gridMap):
 	nGridMap = gridMap
 	
-	var mesh = _generateNavigationMesh(nGridMap, -2, -2, 8, 8)
+	var mesh = _generateNavigationMesh(nGridMap, -8, -8, 16, 16)
 	
 	self.navmesh_remove(currentID)
 	currentID = self.navmesh_create( mesh, Transform())

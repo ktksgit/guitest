@@ -18,6 +18,7 @@ var selDwarf = null
 
 func _ready():
 	set_fixed_process(true)
+	#dont set process input here! set it after receiving signals "mouse_enter" or "mouse_exit"
 	#set_process_input(true)
 	nSelectionPlane = get_node(MAP_PLANE_PATH)
 
@@ -36,8 +37,7 @@ func _fixed_process(delta):
 
 				selDwarf = sel
 		
-		
-		
+	
 	if(bLeftMouseButton && selDwarf != null):
 		bLeftMouseButton = false
 		var world = get_node(CAMERA_PATH).get_world()
@@ -74,7 +74,6 @@ func _fixed_process(delta):
 func _input(event):
 	#FIXME input is triggered even if GUI Element is clicked!
 	if (event.type == InputEvent.MOUSE_BUTTON && event.is_pressed()):
-		print("Selector _input")
 		if(event.button_index == BUTTON_LEFT):
 			var cam = get_viewport().get_camera()
 			vFrom = cam.project_ray_origin(event.pos)
@@ -97,7 +96,6 @@ func _input(event):
 
 
 func _on_Control_mouse_enter():
-	print("_on_Control_mouse_enter")
 	set_process_input(true)
 
 

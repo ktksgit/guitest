@@ -25,7 +25,6 @@ class SaveAsFile:
 		file.close()
 	
 	func saveNodeTree (var node):
-		#TODO: save if the node should be processed
 		file.store_var(node.get_name())
 		file.store_var(node.get_type())
 		
@@ -42,7 +41,7 @@ class SaveAsFile:
 					file.store_8(255)
 					file.store_var("script/script")
 					file.store_var(script_instance.get_path())
-					
+					#HELP: hier kann man statt den Pfad lieber eine ID speichern
 					props.erase(p)
 					break;
 		
@@ -59,6 +58,7 @@ class SaveAsFile:
 			if (p["type"] == TYPE_OBJECT && value != null && value extends Resource):
 				value = value.get_path()
 				file.store_8(255)
+				
 			else:
 				file.store_8(p["type"])
 			
@@ -74,6 +74,12 @@ class SaveAsFile:
 		file.seek(prop_size_store_location)
 		file.store_32(prop_size)
 		file.seek(current_position)
+		
+		#execute save method
+		if(node.has_method("onSave")):
+			file.store_var(node.onSave())
+		else:
+			file.store_var(null)
 		
 		#save child nodes
 		file.store_32(node.get_child_count())

@@ -1,4 +1,4 @@
-extends Sprite3D
+extends "res://game/char/serialize.gd"
 
 #TODO: the collision shape of the dwarf is not saved
 # and should not be saved
@@ -8,7 +8,7 @@ const SPEED = 0.5 # m/s
 
 export(Vector3Array) var walkPath
 export(int) var currentWalkIndex = 0
-export(String) var massu = "Massupilami"
+
 
 func _ready():
 	var shape = BoxShape.new()
@@ -61,12 +61,13 @@ func walk(var vDest, var pathfinder):
 func dig (var location):
 	print("Dig: ", location)
 	
-	if (get_translation().distance_to(location) < 1.8):
+	var position = get_translation()
+	if (position.distance_to(location) < 1.8):
 		var map = get_node(GRID_MAP_PATH)
 		var x = _toInt(location.x)
 		var y = _toInt(location.y)
-		var dwarf_y = _toInt(get_translation().y)
-		var dwarf_x = _toInt(get_translation().x)
+		var dwarf_y = _toInt(position.y)
+		var dwarf_x = _toInt(position.x)
 		if(dwarf_x == x && y == dwarf_y - 1):
 			return
 			

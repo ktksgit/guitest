@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="4" version="2.0" version_name="Godot Engine v2.0.alpha.custom_build">
-	<ext_resource path="res://game/char/dwarf/dwarf.tex" type="Texture" index="0"></ext_resource>
-	<ext_resource path="res://game/char/dwarf/dwarf_main.gd" type="Script" index="1"></ext_resource>
+	<ext_resource path="res://game/char/dwarf/dwarf.tex" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://game/char/dwarf/dwarf_main.gd" type="Script" index="0"></ext_resource>
 	<resource type="BoxShape" path="local://1">
 		<vector3 name="extents"> 1.2, 2.2, 0.2 </vector3>
 
@@ -9,16 +9,33 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 0 </int>
+			<int> 1 </int>
 			<string> "conns" </string>
-			<int_array  len="0"> 				 </int_array>
+			<int_array  len="6"> 				1, 0, 53, 52, 2, 0 </int_array>
 			<string> "names" </string>
-			<string_array  len="51">
+			<string_array  len="54">
 				<string> "Emerald" </string>
-				<string> "Sprite3D" </string>
+				<string> "Spatial" </string>
 				<string> "_import_transform" </string>
+				<string> "script/script" </string>
+				<string> "__meta__" </string>
+				<string> "walkPath" </string>
+				<string> "currentWalkIndex" </string>
+				<string> "StaticBody" </string>
 				<string> "transform/local" </string>
+				<string> "input/ray_pickable" </string>
+				<string> "input/capture_on_drag" </string>
+				<string> "shape_count" </string>
+				<string> "shapes/0/shape" </string>
+				<string> "shapes/0/transform" </string>
+				<string> "shapes/0/trigger" </string>
 				<string> "layers" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "Mesh" </string>
+				<string> "Sprite3D" </string>
 				<string> "geometry/visible" </string>
 				<string> "geometry/material_override" </string>
 				<string> "geometry/cast_shadow" </string>
@@ -49,47 +66,20 @@
 				<string> "frame" </string>
 				<string> "region" </string>
 				<string> "region_rect" </string>
-				<string> "script/script" </string>
-				<string> "__meta__" </string>
-				<string> "walkPath" </string>
-				<string> "currentWalkIndex" </string>
-				<string> "massu" </string>
-				<string> "StaticBody" </string>
-				<string> "input/ray_pickable" </string>
-				<string> "input/capture_on_drag" </string>
-				<string> "shape_count" </string>
-				<string> "shapes/0/shape" </string>
-				<string> "shapes/0/transform" </string>
-				<string> "shapes/0/trigger" </string>
-				<string> "friction" </string>
-				<string> "bounce" </string>
-				<string> "constant_linear_velocity" </string>
-				<string> "constant_angular_velocity" </string>
+				<string> "_on_StaticBody_input_event" </string>
+				<string> "input_event" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 2 </int>
+			<int> 3 </int>
 			<string> "nodes" </string>
-			<int_array  len="116"> 				-1, -1, 1, 0, -1, 38, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 3, 8, 3, 9, 5, 10, 5, 11, 5, 12, 6, 13, 6, 14, 6, 15, 6, 16, 6, 17, 7, 18, 3, 19, 8, 20, 6, 21, 6, 22, 9, 23, 10, 24, 11, 25, 12, 26, 3, 27, 6, 28, 7, 29, 13, 30, 2, 31, 2, 32, 7, 33, 6, 34, 14, 35, 15, 36, 16, 37, 17, 38, 7, 39, 18, 0, 0, 0, 40, 40, -1, 13, 2, 0, 3, 19, 41, 3, 42, 6, 43, 2, 44, 20, 45, 21, 46, 6, 4, 2, 47, 10, 48, 5, 49, 22, 50, 22, 0 </int_array>
+			<int_array  len="123"> 				-1, -1, 1, 0, -1, 5, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 0, 0, 0, 7, 7, -1, 13, 2, 0, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10, 14, 7, 15, 8, 16, 11, 17, 12, 18, 13, 19, 13, 0, 0, 0, 21, 20, -1, 33, 2, 0, 8, 14, 15, 8, 22, 6, 23, 15, 24, 6, 25, 6, 26, 12, 27, 12, 28, 12, 29, 7, 30, 7, 31, 7, 32, 7, 33, 7, 34, 4, 35, 6, 36, 16, 37, 7, 38, 7, 39, 17, 40, 11, 41, 18, 42, 19, 43, 6, 44, 7, 45, 4, 46, 20, 47, 8, 48, 8, 49, 4, 50, 7, 51, 21, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="23" shared="false">
+			<array  len="22" shared="false">
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 </transform>
-				<transform> 0.19, 0, 0, 0, 0.196418, 0, 0, 0, 0.196418, 0.00174952, -0.0089314, 0.00224257 </transform>
-				<int> 1 </int>
-				<bool> True </bool>
-				<resource name=""></resource>				<real> 0 </real>
-				<bool> False </bool>
-				<int> 0 </int>
-				<vector2> 0, 230 </vector2>
-				<color> 1, 1, 1, 1 </color>
-				<real> 1 </real>
-				<real> 0.01 </real>
-				<int> 2 </int>
 				<resource  external="0">  </resource>
-				<rect2> 0, 0, 0, 0 </rect2>
-				<resource  external="1">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_screen__" </string>
-					<string> "3D" </string>
+					<string> "Script" </string>
 					<string> "__editor_plugin_states__" </string>
 					<dictionary  shared="false">
 						<string> "2D" </string>
@@ -141,7 +131,7 @@
 							<array  len="4" shared="false">
 								<dictionary  shared="false">
 									<string> "distance" </string>
-									<real> 2.520679 </real>
+									<real> 4.000001 </real>
 									<string> "listener" </string>
 									<bool> True </bool>
 									<string> "pos" </string>
@@ -151,9 +141,9 @@
 									<string> "use_orthogonal" </string>
 									<bool> False </bool>
 									<string> "x_rot" </string>
-									<real> 0.570796 </real>
+									<real> 0.595796 </real>
 									<string> "y_rot" </string>
-									<real> -0.725 </real>
+									<real> -0.675 </real>
 								</dictionary>
 								<dictionary  shared="false">
 									<string> "distance" </string>
@@ -224,11 +214,23 @@
 					</dictionary>
 				</dictionary>
 				<nil>  </nil>
-				<string> "Massupilami" </string>
+				<int> 0 </int>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19148e-009, 2.30193, 3.59324e-012 </transform>
+				<bool> True </bool>
+				<bool> False </bool>
+				<int> 1 </int>
 				<resource  resource_type="Shape" path="local://1">  </resource>
 				<transform> 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53338e-010, 1.49851e-009, 3.59324e-012 </transform>
+				<real> 1 </real>
+				<real> 0 </real>
 				<vector3> 0, 0, 0 </vector3>
+				<transform> 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 </transform>
+				<resource name=""></resource>				<vector2> 0, 230 </vector2>
+				<color> 1, 1, 1, 1 </color>
+				<real> 0.01 </real>
+				<int> 2 </int>
+				<resource  external="1">  </resource>
+				<rect2> 0, 0, 0, 0 </rect2>
 			</array>
 			<string> "version" </string>
 			<int> 1 </int>

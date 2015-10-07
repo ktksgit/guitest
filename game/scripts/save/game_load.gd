@@ -47,34 +47,30 @@ class LoadAsFile:
 			
 		node.set_name(name)
 		
-		print ("created ", name, " ", type, "-----------------------")
-		
 		var prop_count = file.get_32()
-		print ("prop_count ", prop_count)
 		
 		for i in range (prop_count):
 			type = file.get_8()
 			name = file.get_var()
 			var value = file.get_var()
 			
-			if(name.begins_with("shape")):
-				print("name:", name)
-				print("type:", type)
-				print("value:", value)
 			
 			if (type == 255):
+				#HELP: hier könnte man über eine gepeicherte ID eine Resource laden.
 				var resource = load (value)
 				node.set(name, resource)
 			else:
 				node.set(name, value)
 				
 		
-		if(node extends CollisionShape):
-			node._add_to_collision_object(parent)
-		
 		#add the node to the parent after the script file (a property) is loaded and added to the node
 		parent.add_child(node)
 		
+		#execute save method
+		var value = file.get_var()
+		if(node.has_method("onLoad")):
+			node.onLoad(value)
+
 		var children_count = file.get_32()
 		for i in range (children_count):
 			loadNodeTree(node)
